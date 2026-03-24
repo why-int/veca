@@ -17,7 +17,7 @@ def setup_logger(
 
     # Формат сообщений в логе
     formatter = logging.Formatter(
-        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
     )
 
     # Консольный обработчик (StreamHandler)

@@ -1,12 +1,11 @@
-a = 5
+from aiogram import Router
 
+from src.handlers.callbacks import callbacks_router
+from src.handlers.commands import commands_router
 
-def f(x) -> int:
-    return x + 5
+main_router = Router()
 
-
-def f2(x) -> int:
-    return x + 10
-
-
-print(f2(x=a))
+main_router.include_routers(
+    commands_router,
+    callbacks_router,
+)
