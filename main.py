@@ -7,12 +7,11 @@ from src.core.app_logger import logger
 async def main() -> None:
     logger.info(msg="Запуск приложения...")
     await app_context.setup()
-    await app_context.dp.start_polling(app_context.bot)
-    logger.info(msg="Polling завершён — бот остановлен")
+    logger.info(msg="Приложение остановлено.")
 
 
 if __name__ == "__main__":
     try:
-        asyncio.run(main())
+        asyncio.run(main=main())
     except Exception as e:
-        logger.exception(f"Ошибка при запуске: {e}")
+        logger.exception(msg=f"Ошибка при запуске: {e}")

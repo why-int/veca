@@ -10,7 +10,7 @@ LOG_FILE: Path = LOG_DIR / "app.log"
 
 
 def setup_logger(
-    name: str = "veca", log_file: Path = LOG_FILE, level=logging.DEBUG
+    name: str = "veca", log_file: Path = LOG_FILE, level: int = logging.DEBUG
 ) -> logging.Logger:
     logger = logging.getLogger(name=name)
     logger.setLevel(level)
