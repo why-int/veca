@@ -4,8 +4,7 @@ from aiogram.enums import ParseMode
 
 from src.config import settings
 from src.core.app_logger import logger
-from src.handlers.callbacks import callbacks_router
-from src.handlers.commands import commands_router
+from src.handlers import all_routers
 
 
 async def on_startup() -> None:
@@ -25,8 +24,7 @@ class AppContext:
         # Инициализация основного роутера который включает в себя все роутеры
         logger.info(msg="Инициализация роутеров...")
         self.dp.include_routers(
-            commands_router,
-            callbacks_router,
+            all_routers,
         )
         logger.info(msg="Роутеры инициализарованны.")
 
